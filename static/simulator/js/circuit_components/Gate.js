@@ -35,11 +35,6 @@ export class Gate {
 
     }
 
-    /**
-     * Destroy this gate
-     * First destroy and delete all input
-     * second destroy and delete the output
-     */
     destroy() {
         for (let i = 0; i < this.input.length; i++) {
             this.input[i].destroy();
@@ -49,18 +44,6 @@ export class Gate {
         delete this.output;
     }
 
-    /**
-     * Draw this gate:
-     * If is not spawned, follow mouse
-     *  Else if is not saved, save it and set isSaved to true.
-     * If is moveing, follow mouse.
-     * If this type is gateType.NOT update input[0] position
-     *  Else update input[0] and input[1] postion
-     * Update gate output.
-     * If mouse is over, TODO
-     * Draw gate image and inputs.
-     * Generate output and draw it.
-     */
     draw() {
         if (!this.isSpawned) {
             this.posX = mouseX - (this.width / 2);
@@ -114,16 +97,10 @@ export class Gate {
         this.output.setID(currentID);
     }
 
-    /**
-     * Generate gate output
-     */
     generateOutput() {
         this.output.setValue(this.calculateValue());
     }
 
-    /**
-     * Calculate gate output by type value
-     */
     calculateValue() {
         switch (this.type) {
             case gateType.NOT:
@@ -176,10 +153,6 @@ export class Gate {
         }
     }
 
-    /**
-     * Check if mouse is over
-     * @returns {Boolean} Boolean value
-     */
     isMouseOver() {
         if (mouseX > this.posX && mouseX < (this.posX + this.width)
             && mouseY > this.posY && mouseY < (this.posY + this.height))
@@ -187,10 +160,6 @@ export class Gate {
         return false;
     }
 
-    /**
-     * When mouse is pressed if gate is not spawned, spawn it, then return
-     *
-     */
     mousePressed() {
         if (!this.isSpawned) {
             this.posX = mouseX - (this.width / 2);

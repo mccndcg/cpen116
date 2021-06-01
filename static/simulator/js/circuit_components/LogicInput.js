@@ -3,10 +3,6 @@ import { MouseAction, ElementType } from "./Enums.js";
 import { Node, fillValue } from "./Node.js";
 import { colorMouseOver, fileManager } from "../simulator.js"
 
-/**
- * Generate input for the circuit
- * @classdesc Generate input for the circuit
- */
 export class LogicInput {
     constructor() {
 
@@ -22,26 +18,17 @@ export class LogicInput {
         this.nodeStartID = this.output.id;
         this.isSaved = false;
     }
-    
 
-    /**
-     * @todo this documentation
-     */
+
     static from(json){
         return Object.assign(this, json);
     }
 
-    /**
-     * @todo this documentation
-     */
     destroy() {
         this.output.destroy();
         delete this.output;
     }
 
-    /**
-     * @todo this documentation
-     */
     draw() {
         if (!this.isSpawned) {
             this.posX = mouseX;
@@ -63,7 +50,7 @@ export class LogicInput {
             stroke(colorMouseOver[0], colorMouseOver[1], colorMouseOver[2]);
         else
             stroke(0);
-        
+
         strokeWeight(4);
         line(this.posX, this.posY, this.posX + 30, this.posY);
         circle(this.posX, this.posY, this.diameter);
@@ -88,9 +75,6 @@ export class LogicInput {
         }
     }
 
-    /**
-     * @todo this documentation
-     */
     refreshNodes()
     {
         let currentID = this.nodeStartID;
@@ -98,9 +82,6 @@ export class LogicInput {
     }
 
 
-    /**
-     * @todo this documentation
-     */
     printInfo() {
         noStroke();
         fill(0);
@@ -109,21 +90,13 @@ export class LogicInput {
         text('LOG. INPUT', this.posX - 20, this.posY + 25);
     }
 
-    /**
-     * Checking if mouse if over the input
-     * @returns {Boolean} Boolean Value
-     */
     isMouseOver() {
         if (dist(mouseX, mouseY, this.posX, this.posY) < this.diameter / 2)
             return true;
         return false;
     }
 
-    /**
-     * Called when mouse is pressed
-     * If the element is not spawned, it will be spawned.
-     * Then if mouse is over OR the current action is MOVE then move it
-     */
+
     mousePressed() {
         if (!this.isSpawned) {
             this.posX = mouseX;
@@ -140,10 +113,7 @@ export class LogicInput {
         }
     }
 
-    /**
-     * Called when mouse is released
-     * If the element was moving, release it. 
-     */
+
     mouseReleased() {
         if (this.isMoving) {
             this.isMoving = false;
@@ -151,20 +121,13 @@ export class LogicInput {
 
     }
 
-    /**
-     * Called when mouse is double clicked
-     * If mouse is over this instance
-     * Invert input value 
-     */
+
     doubleClicked() {
         if (this.isMouseOver())
             this.value ^= true;
     }
 
-    /**
-     * Called when mouse is clicked
-     * @todo this documentation
-     */
+
     mouseClicked() {
         if (this.isMouseOver() || this.output.isMouseOver()) {
             this.output.mouseClicked();
@@ -173,12 +136,9 @@ export class LogicInput {
         return false;
     }
 
-    /**
-     * Function to invert instance value
-     */
+
     toggle() {
         this.value ^= true;
     }
 
 }
-

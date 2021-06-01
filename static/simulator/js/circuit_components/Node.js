@@ -14,17 +14,15 @@ export class Node {
         this.isOutput = isOutput;
         this.hitRange = this.diameter + 10;
 
-        // only once input per node
         this.inputState = INPUT_STATE.FREE;
 
-        this.isAlive = true; // not destroyed
-        this.brotherNode = null; // for short circuit
+        this.isAlive = true;
+        this.brotherNode = null;
 
         this.id = currentID;
         currentID++;
 
         nodeList[this.id] = this;
-        //console.log(nodeList);
     }
 
     destroy() {
@@ -45,11 +43,6 @@ export class Node {
             circle(this.posX, this.posY, this.hitRange)
         }
 
-        /*noStroke();
-        fill(0);
-        textSize(12);
-        textStyle(NORMAL);
-        text(this.id, this.posX - 20, this.posY + 25);*/
     }
 
     setID(newID)
@@ -58,7 +51,6 @@ export class Node {
         this.id = newID;
         nodeList[this.id] = this;
 
-        //update max id
         if(this.id > currentID)
             currentID = this.id + 1;
     }

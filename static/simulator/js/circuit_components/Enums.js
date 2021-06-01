@@ -7,7 +7,7 @@ export const MouseAction =
 
 export const gateType =
 {
-    NONE: 0, // for testing usage
+    NONE: 0,
     NOT: 1,
     AND: 2,
     NAND: 3,
@@ -19,7 +19,7 @@ export const gateType =
 
 export const IC_type =
 {
-    NONE: 0, // for testing usage
+    NONE: 0,
     SR_LATCH_ASYNC: 1,
     SR_LATCH_SYNC: 2,
     FF_D_SINGLE: 3,
@@ -30,7 +30,7 @@ export const IC_type =
 
 export const ElementType =
 {
-    NONE: 0, // for testing usage
+    NONE: 0, 
     LOGIC_GATE: 1,
     FLIP_FLOP: 2,
     LOGIC_INPUT: 3,

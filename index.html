@@ -1,12 +1,7 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:fb="http://ogp.me/ns/fb#" lang="en">
+<html lang="en">
 
 <head>
-	<meta property="og:image" content="https://1.bp.blogspot.com/-fc1nYt7scAw/YKzGCVhBENI/AAAAAAAADuQ/BsgVkGLeH4M4IQCkXewaxMDtc10Ww6XsACLcBGAsYHQ/s2000/iconfinal.jpg" />
-	<meta property="og:title"              content="LGCT v.1.0" />
-	<meta property="og:title"              content="A website that can simulate simple logic circuits, collaboratively developed by Ja,
-	Prince, and Billy." />
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="./static/vendor/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,15 +11,14 @@
 	<script src="./static/vendor/js/bootstrap.min.js"></script>
 	<script src="./static/vendor/js/p5.min.js"></script>
 	<script type="module" src="./static/simulator/js/simulator.js"></script>
-	<title>Logic Circuit Tool Project</title>
+	<title>VDLC</title>
 </head>
 
 <body>
 
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 		<a class="navbar-brand text-center" href="#">
-			<strong>Logic Gate</strong>
-			<br><i>Tool Project</i>
+			VDLC
 		</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
 			aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -92,8 +86,6 @@
 			</ul>
 		</div>
 	</nav>
-	<!-- Begin page content -->
-
 	<div class="container-fluid pt-3">
 		<div class="row">
 			<div class="tools col-0 ml-3 pr-0 overflow-scroll" style="overflow-y: scroll;height: calc(100vh - 5rem);">
@@ -114,11 +106,29 @@
 						class="list-group-item list-group-item-action pl-1">
 						<img src="./static/simulator/img/AND.svg" width="50">
 					</button>
-
+					<button type="button" tool="NAND" isGate="true" onclick="activeTool(this)"
+						class="list-group-item list-group-item-action pl-1">
+						<img src="./static/simulator/img/NAND.svg" width="50">
+					</button>
+					<button type="button" tool="OR" isGate="true" onclick="activeTool(this)"
+						class="list-group-item list-group-item-action pl-1">
+						<img src="./static/simulator/img/OR.svg" width="50">
+					</button>
+					<button type="button" tool="NOR" isGate="true" onclick="activeTool(this)"
+						class="list-group-item list-group-item-action pl-1">
+						<img src="./static/simulator/img/NOR.svg" width="50">
+					</button>
+					<button type="button" tool="XOR" isGate="true" onclick="activeTool(this)"
+						class="list-group-item list-group-item-action pl-1">
+						<img src="./static/simulator/img/XOR.svg" width="50">
+					</button>
+					<button type="button" tool="XNOR" isGate="true" onclick="activeTool(this)"
+						class="list-group-item list-group-item-action pl-1">
+						<img src="./static/simulator/img/XNOR.svg" width="50">
+					</button>
 				</div>
 			</div>
 			<div class="col-10 pl-0">
-				<!-- Simulator Canvas -->
 				<div id="canvas-sim"></div>
 			</div>
 		</div>

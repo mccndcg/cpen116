@@ -36,8 +36,7 @@ export class Wire {
         if (this.endNode == null) {
 
             if (!this.startNode.isAlive)
-                return false; // destroy the wire
-
+                return false; 
             line(this.startNode.posX, this.startNode.posY,
                 mouseX, mouseY);
 

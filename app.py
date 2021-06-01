@@ -7,18 +7,12 @@ from flask import Flask, render_template, make_response, jsonify, request, abort
 
 app = Flask(__name__, template_folder='./')
 
-@app.route('/jajas')
-def jajas():
-    return make_response("i love you")
-
-@app.route('/complete')
-def complete():
-    return render_template('indexcomplete.html')
 
 @app.route('/')
-def index():
+def complete():
     return render_template('index.html')
 
+
 if __name__ == '__main__':
-    #app.run(debug=True)
-    app.run()
+    app.run(debug=True)
+    #app.run()

@@ -17,10 +17,6 @@ export class FileManager {
     }
 
 
-
-    /**
-     * @todo TODO
-     */
     saveFile(e) {
 
         let jsonWorkspace = FileManager.getJSON_Workspace();
@@ -29,9 +25,6 @@ export class FileManager {
         //console.log(jsonWorkspace);
     }
 
-    /**
-     * @todo TODO
-     */
     static getJSON_Workspace() {
         let workspace = new Object();
 
@@ -72,7 +65,6 @@ export class FileManager {
                         return undefined;
                 }
 
-                // other things which is not possible to export on JSON
                 return value;
             }, '\t');
         return jsonWorkspace;

@@ -60,10 +60,7 @@ export function backToEdit() {
     currMouseAction = MouseAction.EDIT;
 }
 
-/**
- * Save Option
- * Export All logic input and output on console
- */
+
 export function save() {
 
     for (let i = 0; i < logicInput.length; i++) {

@@ -11,9 +11,6 @@ export let wireMng;
 export let colorMouseOver = [0 ,0x7B, 0xFF];
 export let fileManager = new FileManager();
 
-/**
- * @todo TODO
- */
 export function preload() {
     gateIMG.push(loadImage('./static/simulator/img/LogicInput.svg'));
     gateIMG.push(loadImage('./static/simulator/img/NOT.svg'));
